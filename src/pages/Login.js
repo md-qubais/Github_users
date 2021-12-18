@@ -3,7 +3,14 @@ import { useAuth0 } from '@auth0/auth0-react';
 import styled from 'styled-components';
 import loginImg from '../images/login-img.svg';
 const Login = () => {
-  return <h2>login page</h2>;
+  const {loginWithRedirect}=useAuth0();
+  return <Wrapper>
+    <div className='container'>
+      <img src={loginImg} alt="user image"></img>
+      <h2>Github User</h2>
+      <button onClick={loginWithRedirect} className='btn'>Login / Signup</button>
+    </div>
+  </Wrapper>
 };
 const Wrapper = styled.section`
   min-height: 100vh;
